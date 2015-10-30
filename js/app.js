@@ -8,18 +8,36 @@
 	var gems = [
 		{
 			name: 'B',
-			price: 2.95,
+			price: 2,
 			description: '...',
 			canPurchase: true,
-			soldOut: true
+			soldOut: false,
+			image: '../images/muscle_dodge.jpg'
 		},
 		{
 			name: 'A',
-			price: 2.95,
+			price: 5.9,
 			description: '...',
 			canPurchase: true,
-			soldOut: false
-		}	
+			soldOut: false,
+			image: '../images/corvette.jpg'
+		},	
+		{
+			name: 'A',
+			price: 5.9,
+			description: '...',
+			canPurchase: true,
+			soldOut: false,
+			image: '../images/ford_shelby_gt500.jpg'
+		},
+		{
+			name: 'A',
+			price: 5.9,
+			description: '...',
+			canPurchase: true,
+			soldOut: false,
+			image: '../images/gt500_eleanor.jpg'
+		}		
 	];
 })();
 
