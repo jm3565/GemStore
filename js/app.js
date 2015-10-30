@@ -5,9 +5,21 @@
 		this.products = gems;
 	});
 	
+	app.controller('PanelController', function(){
+		this.tab = 1;
+		
+		this.selectTab = function(setTab){
+			this.tab = setTab;	
+		};
+		
+		this.isSelected = function(checkTab){
+			return this.tab === checkTab;	
+		};
+	});
+	
 	var gems = [
 		{
-			name: 'B',
+			name: 'Dodge Charger',
 			price: 2,
 			description: '...',
 			canPurchase: true,
@@ -15,7 +27,7 @@
 			image: '../images/muscle_dodge.jpg'
 		},
 		{
-			name: 'A',
+			name: 'Chevrolet Corvette',
 			price: 5.9,
 			description: '...',
 			canPurchase: true,
@@ -23,7 +35,7 @@
 			image: '../images/corvette.jpg'
 		},	
 		{
-			name: 'A',
+			name: 'Ford Shelby GT500',
 			price: 5.9,
 			description: '...',
 			canPurchase: true,
@@ -31,7 +43,7 @@
 			image: '../images/ford_shelby_gt500.jpg'
 		},
 		{
-			name: 'A',
+			name: 'Ford GT500 Eleanor',
 			price: 5.9,
 			description: '...',
 			canPurchase: true,
