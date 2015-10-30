@@ -39,7 +39,43 @@
           </div>
           <div class="panel" ng-show="panel.isSelected(3)">
             <h4>Reviews</h4>
-            <p>{{product.reviews}}</p>
+            <li ng-repeat="review in product.reviews">
+              <blockquote >
+                <strong>Starts: {{review.stars}}</strong>
+                {{review.body}}
+                <cite class="clearfix">- {{review.author}}</cite>
+              </blockquote>
+            </li>
+            
+            
+            <form name="reviewForm">
+              <!--Live View-->
+              
+              <blockquote >
+                <strong>{{rating.name}}</strong>
+                {{review.body}}
+                <cite>by: {{review.author}}</cite>
+              </blockquote>  
+                          
+              <p name="message" ng-show="form.$dirty">form is dirty</p>
+              
+              <h4>Submit a Review</h4>
+              <fieldset class="form-group">
+                <select class="form-control" 
+                        ng-model="rating.name" 
+                        ng-options="rating.name as rating.name for rating in store.ratings">
+                </select>  
+              </fieldset>
+              <fieldset class="form-group">
+                <textarea class="form-control" ng-model="review.body"></textarea>
+              </fieldset>
+              <fieldset class="form-group">
+                <input class="form-control" ng-model="review.author" type="email"/>
+              </fieldset>
+              <fieldset class="form-group">
+                <input type="submit" value="Submit"/>
+              </fieldset>
+            </form>
           </div>
         </section>
         <button ng-show="product.canPurchase">Add to Cart</button>
