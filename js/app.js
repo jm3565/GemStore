@@ -22,8 +22,13 @@
 		this.newReview = {};
 		
 		this.addReview = function(product){
+			this.newReview.stars = this._parseRating(this.newReview.stars);
 			product.reviews.push(this.newReview);
 			this.newReview = {};
+		}
+		
+		this._parseRating = function(rtng){
+			return rtng.split(" ")[0]
 		}
 	});
 	

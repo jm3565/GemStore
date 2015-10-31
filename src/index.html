@@ -52,10 +52,10 @@
                   ng-controller="ReviewController as reviewCtrl"
                   ng-submit="reviewCtrl.addReview(product)">
               <!--Live View-->
-              <blockquote >
+              <blockquote>
                 <strong>{{reviewCtrl.newReview.stars}}</strong>
                 {{reviewCtrl.newReview.body}}
-                <cite>by: {{reviewCtrl.newReview.author}}</cite>
+                <cite class="clearfix" ng-show="reviewCtrl.newReview.author">- {{reviewCtrl.newReview.author}}</cite>
               </blockquote>
 
               <h4>Submit a Review</h4>
