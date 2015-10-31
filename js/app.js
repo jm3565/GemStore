@@ -41,6 +41,13 @@
 		};
 	});
 	
+	app.directive('productSpecs', function(){
+		return {
+			restrict: 'A',
+			templateUrl: '../src/templates/product-specs.html'
+		};
+	});
+	
 	var ratings = [
 		{
 			name: '1 Star',
