@@ -33,6 +33,14 @@
 		}
 	});
 	
+	// Name of the directives need to be in camelCase
+	app.directive('productDescription', function(){
+		return {
+			restrict: 'E',
+			templateUrl: '../src/templates/product-description.html'
+		};
+	});
+	
 	var ratings = [
 		{
 			name: '1 Star',
