@@ -41,36 +41,35 @@
             <h4>Reviews</h4>
             <li ng-repeat="review in product.reviews">
               <blockquote >
-                <strong>Starts: {{review.stars}}</strong>
+                <strong>Stars: {{review.stars}}</strong>
                 {{review.body}}
                 <cite class="clearfix">- {{review.author}}</cite>
               </blockquote>
             </li>
-            
-            
-            <form name="reviewForm">
+
+
+            <form name="reviewForm"
+                  ng-controller="ReviewController as reviewCtrl"
+                  ng-submit="reviewCtrl.addReview(product)">
               <!--Live View-->
-              
               <blockquote >
-                <strong>{{rating.name}}</strong>
-                {{review.body}}
-                <cite>by: {{review.author}}</cite>
-              </blockquote>  
-                          
-              <p name="message" ng-show="form.$dirty">form is dirty</p>
-              
+                <strong>{{reviewCtrl.newReview.stars}}</strong>
+                {{reviewCtrl.newReview.body}}
+                <cite>by: {{reviewCtrl.newReview.author}}</cite>
+              </blockquote>
+
               <h4>Submit a Review</h4>
               <fieldset class="form-group">
-                <select class="form-control" 
-                        ng-model="rating.name" 
+                <select class="form-control"
+                        ng-model="reviewCtrl.newReview.stars"
                         ng-options="rating.name as rating.name for rating in store.ratings">
-                </select>  
+                </select>
               </fieldset>
               <fieldset class="form-group">
-                <textarea class="form-control" ng-model="review.body"></textarea>
+                <textarea class="form-control" ng-model="reviewCtrl.newReview.body"></textarea>
               </fieldset>
               <fieldset class="form-group">
-                <input class="form-control" ng-model="review.author" type="email"/>
+                <input class="form-control" ng-model="reviewCtrl.newReview.author" type="email"/>
               </fieldset>
               <fieldset class="form-group">
                 <input type="submit" value="Submit"/>

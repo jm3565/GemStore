@@ -18,6 +18,15 @@
 		};
 	});
 	
+	app.controller('ReviewController', function(){
+		this.newReview = {};
+		
+		this.addReview = function(product){
+			product.reviews.push(this.newReview);
+			this.newReview = {};
+		}
+	});
+	
 	var ratings = [
 		{
 			name: '1 Star',
