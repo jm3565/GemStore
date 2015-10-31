@@ -48,6 +48,13 @@
 		};
 	});
 	
+	app.directive('productReviews', function(){
+		return {
+			restrict: 'E',
+			templateUrl: '../src/templates/product-reviews.html'
+		}
+	});
+	
 	var ratings = [
 		{
 			name: '1 Star',

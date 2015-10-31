@@ -33,56 +33,9 @@
           
           <product-description ng-show="panel.isSelected(1)"></product-description>
           
-          <div class="panel" ng-show="panel.isSelected(2)" product-specs>
-            <!--<h4>Specifications</h4>
-            <p>{{product.specifications}}</p>-->
-          </div>
-          <div class="panel" ng-show="panel.isSelected(3)">
-            <h4>Reviews</h4>
-            <li ng-repeat="review in product.reviews">
-              <blockquote >
-                <strong>Stars: {{review.stars}}</strong>
-                {{review.body}}
-                <cite class="clearfix">- {{review.author}} on {{review.createdOn | date}}</cite>
-              </blockquote>
-            </li>
-
-
-
-            <form name="reviewForm"
-                  ng-controller="ReviewController as reviewCtrl"
-                  ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)"
-                  novalidate>
-                  <!--Only submit when form is valid-->
-                  <!--novalidate turns off default HTML validation-->
-                  
-              <!--Live View-->
-              <blockquote ng-show="reviewForm.$dirty">
-                <strong>{{reviewCtrl.newReview.stars}}</strong>
-                {{reviewCtrl.newReview.body}}
-                <cite class="clearfix" ng-show="reviewCtrl.newReview.author">- {{reviewCtrl.newReview.author}}</cite>
-              </blockquote>
-
-              <h4>Submit a Review</h4>
-              <fieldset class="form-group">
-                <select class="form-control"
-                        ng-model="reviewCtrl.newReview.stars"
-                        ng-options="rating.name as rating.name for rating in store.ratings"
-                        required>
-                        <option value="">Rate the product</option>
-                </select>
-              </fieldset>
-              <fieldset class="form-group">
-                <textarea class="form-control" ng-model="reviewCtrl.newReview.body" placeholder="Write a short review" required></textarea>
-              </fieldset>
-              <fieldset class="form-group">
-                <input class="form-control" ng-model="reviewCtrl.newReview.author" type="email" placeholder="john.doe@email.com" required=""/>
-              </fieldset>
-              <fieldset class="form-group">
-                <input class="btn btn-primary pull-right" type="submit" value="Submit"/>
-              </fieldset>
-            </form>
-          </div>
+          <div class="panel" ng-show="panel.isSelected(2)" product-specs></div>
+          
+          <product-reviews ng-show="panel.isSelected(3)"></product-reviews>
         </section>
         <button class="btn btn-primary" ng-show="product.canPurchase">Add to Cart</button>
       </div>
