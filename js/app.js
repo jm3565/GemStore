@@ -6,15 +6,23 @@
 		this.ratings = ratings;
 	});
 	
-	app.controller('PanelController', function(){
-		this.tab = 3;
+	// Control Directive
+	app.directive('productPanels', function(){
+		return {
+			restrict: 'E',
+			templateUrl: '../src/templates/product-panels.html',
+			controllerAs: 'panel',
+			controller: function(){
+				this.tab = 3;
 		
-		this.selectTab = function(setTab){
-			this.tab = setTab;	
-		};
-		
-		this.isSelected = function(checkTab){
-			return this.tab === checkTab;	
+				this.selectTab = function(setTab){
+					this.tab = setTab;	
+				};
+				
+				this.isSelected = function(checkTab){
+					return this.tab === checkTab;	
+				};
+			}	
 		};
 	});
 	
